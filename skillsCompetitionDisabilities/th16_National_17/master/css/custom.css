@@ -1,0 +1,38 @@
+* {
+  font-family: "微軟正黑體", Arial, sans-serif;
+}
+.vh-25 {
+  height: 25vh !important;
+}
+
+
+@media (min-width:1200px){.container{max-width:1024px}}
+
+
+body{
+  min-height:100vh;
+}
+main{
+  min-height: 100vh;
+  margin-bottom: -56px;
+  padding-bottom: 56px;
+}
+
+#myfooter{
+  height:56px;
+}
+
+.card{
+  width:100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.table-cals td:not(.disabled):hover{
+  background-color:#ffff0033;
+  cursor: pointer;
+}
+.table-cals td.disabled{
+  background-color:#00000033;
+  color:#00000033;
+}

@@ -1,0 +1,105 @@
+body{
+  font-family: none;
+}
+.tz_thumbnail {
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: 400ms;
+    -o-transition: 400ms;
+    transition: 400ms;
+    transition: all 400ms linear 0s;
+    -moz-transition: all 400ms linear 0s;
+    -webkit-transition: all 400ms linear 0s;
+    -o-transition: all 400ms linear 0s;
+  }
+  .tz_thumbnail img {
+    -webkit-transition: 400ms;
+    -o-transition: 400ms;
+    transition: 400ms;
+    transition: all 400ms linear 0s;
+    -moz-transition: all 400ms linear 0s;
+    -webkit-transition: all 400ms linear 0s;
+    -o-transition: all 400ms linear 0s;
+    position: relative;
+  }
+  .tz_thumbnail:hover::after {
+    background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+  }
+  .tz_thumbnail:hover img {
+    -ms-transform: scale(1.2);
+    /* IE 9 */
+    -webkit-transform: scale(1.2);
+    /* Safari */
+    transform: scale(1.2);
+    /* Standard syntax */
+  }
+
+
+  .tz_thumbnail::after {
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all 0.4s linear 0.1s;
+    width: 100%;
+  }
+  .tz_thumbnail .tz_member_meetup {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+
+
+
+
+  .ds-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+  .ds-table .ds-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  span.tz_text_hover_speaker {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 25px;
+    color: #e91061;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.5em;
+    opacity: 0;
+    padding: 0 25px;
+    text-transform: uppercase;
+    transform: translateY(30px);
+    transition: all 0.4s ease 0s;
+  }
+  .tz_thumbnail.thumbnail_home h3.tz_meetup_name {
+    margin-bottom: 20px;
+  }
+  .tz_thumbnail.thumbnail_home .tz_text_hover_speaker {
+    transform: translateY(30px);
+    background: #e91061;
+    color: #ffffff;
+  }
+  .tz_thumbnail.thumbnail_home:hover .tz_text_hover_speaker {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: all 0.4s ease 500ms;
+    -o-transition: all 0.4s ease 500ms;
+    transition: all 0.4s ease 500ms;
+    transition: all all 0.4s ease 500ms linear 0s;
+    -moz-transition: all all 0.4s ease 500ms linear 0s;
+    -webkit-transition: all all 0.4s ease 500ms linear 0s;
+    -o-transition: all all 0.4s ease 500ms linear 0s;
+  }

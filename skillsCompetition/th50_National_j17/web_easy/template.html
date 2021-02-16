@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>競賽網站</title>
+  <link rel="stylesheet" href="plugin/bootstrap.min.css">
+  <script src="plugin/jquery.min.js"></script>
+  <script src="plugin/bootstrap.min.js"></script>
+  <style>
+    * {
+      font-family: "微軟正黑體" !important;
+    }
+
+    section {
+      margin: 80px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul class="nav">
+          <li class="brand">第 50 屆全國競賽電競遊 官方網站</li>
+
+          <!-- at index.php, msg.php -->
+          <li><a href="#">首頁</a></li>
+          <li><a href="msg.php">留言板</a></li>
+          <li><a href="#pkadd" data-toggle="modal">玩家參賽</a></li>
+          <li><a href="#login" data-toggle="modal">網站管理</a></li>
+
+          <!--at admin.php-->
+          <li><a href="api.php?do=logout">管理登出</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 賽事版 at index.php-->
+  <section class="container">
+    <h2>最新消息與賽制公告區塊</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th width="10%">賽事場次</th>
+          <th width="10%"></th>
+          <th width="30%">玩家</th>
+          <th width="10%">匹配</th>
+          <th width="30%">玩家</th>
+          <th width="10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><img src="img/user.jpg"></td>
+          <td>User A</td>
+          <td>VS</td>
+          <td>User B</td>
+          <td><img src="img/user.jpg"></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><img src="img/user.jpg"></td>
+          <td>User E</td>
+          <td>VS</td>
+          <td>等待匹配中。..</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!--留言版 at msg.php, admin.php-->
+  <section class="container">
+    <h2>玩家留言板</h2>
+
+    <!-- msgadd at index.php, msg.php -->
+    <a href="#msgadd" class="btn btn-info" data-toggle="modal" style="float:right">我要留言</a>
+    <div style="clear: both;"></div>
+
+
+    <!-- ok version -->
+    <div class="thumbnail row-fluid">
+      <div class="span2">
+        <img src="img/user.jpg" class="img-circle" width="100" height="100">
+        <h4>User D</h4>
+        <h5>#<span class="sn">4</span></h5>
+      </div>
+      <div class="span10">
+        <p class="info">留言內容D</p>
+        <div class="bottom">
+          <span class="badge badge-info">
+            TEL: <span class="tel">02-32345678</span>
+          </span>
+          <span class="badge badge-info">
+            Mail: <span class="mail">dd@gmail.com</span>
+          </span>
+          <span class="badge badge-info">
+            Update: 2020-07-20 19:55:54 </span>
+
+          <!-- 修改刪除 for admin.php -->
+          <a href="#msgmdy" data-toggle="modal" class="btn btn-warning">修改</a>
+          <a href="api.php?do=msgdel&id=0" class="btn btn-danger">刪除</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- delete version -->
+    <div class="thumbnail row-fluid del">
+      <div class="span2">#2</div>
+      <div class="span10">此樓留言已被刪除</div>
+    </div>
+  </section>
+
+  <!-- modal * 4 + script * 1 -->
+  <footer>
+    <!-- login, at index.php, msg.php -->
+    <form id="login" class="modal hide fade" action="api.php?do=login" method="post">
+      <div class="modal-body">
+        <h3>後台登入</h3>
+
+        帳號（玩家名稱）<br>
+        <input type="text" name="user" required>
+        <br><br>
+
+        密碼（玩家請輸入 Mail）<br>
+        <input type="password" name="pwd" required>
+        <br><br>
+
+        驗證碼<br>
+        <svg x="0px" y="0px" viewbox="0 0 100 30">
+          <text>1234</text>
+        </svg>
+        <input type="text" name="ans" required>
+        <br><br>
+
+        <div class="btn-group pull-right">
+          <button class="btn" data-dismiss="modal">取消</button>
+          <input class="btn btn-primary" type="submit" value="送出">
+        </div>
+      </div>
+    </form>
+
+    <!-- msgadd, at msg.php-->
+    <form id="msgadd" class="modal hide fade" action="api.php?do=msgadd" method="post">
+      <div class="modal-body">
+        <h3>新增留言</h3>
+
+        玩家姓名<br>
+        <input type="text" name="user" required>
+        <br><br>
+
+        留言內容<br>
+        <textarea name="info" required></textarea>
+        <br><br>
+
+        Email<br>
+        <input type="email" name="mail" required>
+        <br><br>
+
+        連絡電話<br>
+        <input type="tel" name="tel" pattern="[0-9\-]{9,12}" required>
+        <br><br>
+
+        <div class="btn-group pull-right">
+          <button class="btn" data-dismiss="modal">取消</button>
+          <input class="btn btn-primary" type="submit" value="送出">
+        </div>
+      </div>
+    </form>
+
+    <!--msgmdy,at admin.php-->
+    <form id="msgmdy" class="modal hide fade " action="api.php?do=msgmdy" method="post">
+      <div class="modal-body">
+        <h3>編輯留言</h3>
+        <input type="hidden" name="id">
+
+        玩家姓名<br>
+        <input type="text" name="user" required value="Loki">
+        <br><br>
+
+        留言內容<br>
+        <textarea name="info" required>Old Message</textarea>
+        <br><br>
+
+        Email<br>
+        <input type="email" name="mail" required value="summer10920@gmail.com">
+        <br><br>
+
+        連絡電話<br>
+        <input type="tel" name="tel" pattern="[0-9\-]{9,12}" value="0204888988">
+        <br><br>
+
+        <div class="btn-group pull-right">
+          <button class="btn" data-dismiss="modal">取消</button>
+          <input class="btn btn-primary" type="submit" value="送出">
+        </div>
+      </div>
+    </form>
+
+    <!--msgmdy need, at admin.php-->
+    <script>
+      function setval(e) {
+        let bigroot = $(e).parents(".row-fluid");
+        let name = bigroot.find("h4").text();
+        let info = bigroot.find("p").text();
+        let mail = bigroot.find(".mail").text();
+        let tel = bigroot.find(".tel").text();
+        let id = bigroot.find(".sn").text();
+
+        $("#msgmdy").find("input[name=user]").val(name);
+        $("#msgmdy").find("textarea[name=info]").text(info);
+        $("#msgmdy").find("input[name=mail]").val(mail);
+        $("#msgmdy").find("input[name=tel]").val(tel);
+        $("#msgmdy").find("input[name=id]").val(id);
+      }
+    </script>
+
+    <!-- pkadd, at index.php, msg.php -->
+    <form id="pkadd" class="modal hide fade " action="api.php?do=pkadd" method="post" enctype="multipart/form-data">
+      <div class="modal-body">
+        <h3>玩家參賽</h3>
+
+        玩家姓名<br>
+        <input type="text" name="user" required>
+        <br><br>
+
+        玩家頭像<br>
+        <input type="file" name="img" required>
+        <br><br>
+
+        Email<br>
+        <input type="email" name="mail" required>
+        <br><br>
+
+        連絡電話<br>
+        <input type="tel" name="tel" pattern="[0-9\-]{9,12}" required>
+        <br><br>
+
+        <div class="btn-group pull-right">
+          <button class="btn" data-dismiss="modal">取消</button>
+          <input class="btn btn-primary" type="submit" value="送出">
+        </div>
+      </div>
+    </form>
+  </footer>
+</body>
+
+</html>

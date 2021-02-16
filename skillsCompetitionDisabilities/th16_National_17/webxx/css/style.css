@@ -1,0 +1,21 @@
+body{
+font-family: "微軟正黑體" !important;
+overflow: auto;
+height: 100vh;
+}
+
+.content {
+    padding-bottom: 86px;
+    min-height: 100%;
+    margin-bottom: -56px;
+}
+
+.mt-7{
+    height: 180px;
+}
+.vh-70{height:25vh!important}
+
+.calt th{
+    width: 14%;
+    /* background-color: #fff3cd; */
+}

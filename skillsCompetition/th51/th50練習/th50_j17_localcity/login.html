@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Mr. Victab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body id="login">
+  <header>
+    <nav class="container">
+      <h1>LOGO</h1>
+      <a href="home.html">Home</a>
+      <a href="tourist.html">Tourist Attractions</a>
+      <a href="culture.html">Culture</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="box">
+        <img src="https://picsum.photos/200/500/?random=1">
+        <form action="sql.php">
+          <label class="col-12">
+            <div>USER NAME</div>
+            <input type="text" name="acc">
+          </label>
+          <label class="col-12">
+            <div>PASSWORD</div>
+            <input type="password" name="pwd">
+          </label>
+          <label class="col-6">
+            <div>CAPTCHA CODE</div>
+            <span>5676541</span>
+          </label>
+          <label class="col-6">
+            <div>ENTER CAPTCHA</div>
+            <input type="text" name="chk">
+          </label>
+          <label class="col-12">
+            <input type="submit" value="SEND">
+          </label>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">Copyright © 2020 Mr. Victab All Rights Reserved</div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電競網站</title>
+  <link rel="stylesheet" href="plugin/bootstrap.min.css">
+  <link rel="stylesheet" href="plugin/style.css">
+  <script src="plugin/jquery.min.js"></script>
+  <script src="plugin/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <header class="row-fluid">
+    <div class="span4">第46屆全國競賽電競遊 官方網站</div>
+    <div class="span4">
+      <img src="img/logo.png">
+    </div>
+    <div class="span4">
+      <h3>贊助商熱血招募中！</h3>
+    </div>
+
+  </header>
+  <nav class="mynav">
+    <div class="navbar navbar-inverse container">
+      <div class="navbar-inner">
+        <!-- <a class="brand" href="#">LOGO</a> -->
+        <ul class="nav">
+          <!-- <li class="active"><a href="#">Home</a></li> -->
+          <li><a href="#">回首頁</a></li>
+          <li><a href="#">玩家留言板</a></li>
+          <li><a href="#">玩家參賽</a></li>
+          <li><a href="#">網站管理</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="myslider" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="active item">
+        <img src="https://picsum.photos/1920/400/?random=1">
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/1920/400/?random=2">
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/1920/400/?random=3">
+      </div>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myslider" data-slide="prev">〈</a>
+    <a class="carousel-control right" href="#myslider" data-slide="next">〉</a>
+  </section>
+
+  <section class="mymsg container">
+    <h2>玩家留言板</h2>
+    <a href="#msgadd" class="btn btn-info" data-toggle="modal" style="float:right">我要留言</a>
+    <div style="clear: both;"></div>
+    <div class="thumbnail row-fluid">
+      <div class="caption span2">
+        <img src="https://fakeimg.pl/100x100" class="img-circle">
+        <h5>User Name</h5>
+      </div>
+      <div class="caption span10">
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+          metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <div class="bottom">
+          <span class="badge badge-info">&phone; 0988-588-088</span>
+          <span class="badge badge-info"><i class="icon-envelope icon-white"></i> summer10920@gmail.com</span>
+          <span class="badge badge-info"><i class="icon-time icon-white"></i> 2020-09-09 18:00:00</span>
+        </div>
+        <div class="control">
+          <a href="#msgmdy" class="btn btn-warning" data-toggle="modal">編輯</a>
+          <a href="api.php?do=msgdel&id=0" class="btn btn-danger">刪除</a>
+        </div>
+      </div>
+    </div>
+    <div class="thumbnail row-fluid">
+      <div class="caption span2">
+        <img src="https://fakeimg.pl/100x100" class="img-circle">
+        <h5>User Name</h5>
+      </div>
+      <div class="caption span10">
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+          metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <div class="bottom">
+          <span class="badge badge-info">&phone; 0988-588-088</span>
+          <span class="badge badge-info"><i class="icon-envelope icon-white"></i> summer10920@gmail.com</span>
+          <span class="badge badge-info"><i class="icon-time icon-white"></i> 2020-09-09 18:00:00</span>
+        </div>
+        <div class="control">
+          <a href="#msgmdy" class="btn btn-warning" data-toggle="modal">編輯</a>
+          <a href="api.php?do=msgdel&id=0" class="btn btn-danger">刪除</a>
+        </div>
+      </div>
+    </div>
+    <div class="thumbnail row-fluid">
+      <div class="caption span2">
+        <img src="https://fakeimg.pl/100x100" class="img-circle">
+        <h5>User Name</h5>
+      </div>
+      <div class="caption span10">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, doloremque nemo voluptate inventore optio
+          officiis quae quia, non a nihil obcaecati error soluta animi sunt aperiam vero illum quas recusandae iusto
+          mollitia alias omnis voluptatibus eius odio? A neque rerum harum reprehenderit tempore assumenda non ut veniam
+          animi earum dicta porro ratione sunt, deserunt sapiente eum, consequatur blanditiis molestias officia eveniet
+          ullam repellat. Obcaecati dignissimos eligendi architecto corporis impedit ratione? Perferendis ullam quaerat,
+          eius eligendi necessitatibus qui aut est cupiditate dolorum laudantium doloribus recusandae. Sed blanditiis
+          vero modi. Voluptate facilis exercitationem iure repellendus delectus at sed? Ipsum nostrum reiciendis animi.
+        </p>
+        <div class="bottom">
+          <span class="badge badge-info">&phone; 0988-588-088</span>
+          <span class="badge badge-info"><i class="icon-envelope icon-white"></i> summer10920@gmail.com</span>
+          <span class="badge badge-info"><i class="icon-time icon-white"></i> 2020-09-09 18:00:00</span>
+        </div>
+        <div class="control">
+          <a href="#msgmdy" class="btn btn-warning" data-toggle="modal">編輯</a>
+          <a href="api.php?do=msgdel&id=0" class="btn btn-danger">刪除</a>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <form id="msgadd" class="modal hide fade" action="api.php?do=msgadd">
+      <div class="modal-header">
+        <h3>Message Adding</h3>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">取消</button>
+        <input class="btn btn-primary" type="submit" value="儲存">
+      </div>
+    </form>
+    <form id="msgmdy" class="modal hide fade" action="api.php?do=msgmdy">
+      <div class="modal-header">
+        <h3>Message Moddifying</h3>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">取消</button>
+        <input class="btn btn-primary" type="submit" value="儲存">
+      </div>
+    </form>
+  </section>
+
+  <section class="mypk container">
+    <h2>最新消息與賽制公告區塊</h2>
+    <div class="row-fluid">
+      <div class="caption span4 thumbnail row-fluid">
+        <div class="red span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+        <div class="span2">VS</div>
+        <div class="blue span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+      </div>
+      <div class="caption span4 thumbnail row-fluid">
+        <div class="red span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+        <div class="span2">VS</div>
+        <div class="blue span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+      </div>
+      <div class="caption span4 thumbnail row-fluid">
+        <div class="red span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+        <div class="span2">VS</div>
+        <div class="blue span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+      </div>
+      <div class="caption span4 thumbnail row-fluid">
+        <div class="red span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+        <div class="span2">VS</div>
+        <div class="blue span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+      </div>
+      <div class="caption span4 thumbnail row-fluid">
+        <div class="red span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+        <div class="span2">VS</div>
+        <div class="blue span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+      </div>
+      <div class="caption span4 thumbnail row-fluid">
+        <div class="red span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+        <div class="span2">VS</div>
+        <div class="blue span5" style="background: url('https://fakeimg.pl/100x100');">
+          <h5>User Name</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    $('.carousel').carousel({
+      interval: 2000
+    })
+  </script>
+</body>
+
+</html>

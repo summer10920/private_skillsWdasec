@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourist Attractions | Mr. Victab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+</head>
+
+<body id="tourist">
+  <header>
+    <nav class="container">
+      <h1>LOGO</h1>
+      <a href="home.html">Home</a>
+      <a href="tourist.html" class="active">Tourist Attractions</a>
+      <a href="culture.html">Culture</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="list">
+        <a href="#card1">Lorem ipsum dolor sit amet. A</a>
+        <a href="#card2">Lorem ipsum dolor sit amet. B</a>
+        <a href="#card3">Lorem ipsum dolor sit amet. C</a>
+        <a href="#card4">Lorem ipsum dolor sit amet. D</a>
+        <a href="#card5">Lorem ipsum dolor sit amet. E</a>
+      </div>
+      <div class="box">
+        <div id="card1">
+          <img src="https://fakeimg.pl/600x300/f88">
+          <p>A Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore culpa inventore modi cumque impedit
+            reprehenderit beatae exercitationem facilis! Velit harum esse temporibus voluptatem quae, omnis ducimus
+            numquam
+            at earum asperiores.</p>
+        </div>
+        <div id="card2" style="display: none;">
+          <img src="https://fakeimg.pl/600x300/ff8">
+          <p>B Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore culpa inventore modi cumque impedit
+            reprehenderit beatae exercitationem facilis! Velit harum esse temporibus voluptatem quae, omnis ducimus
+            numquam
+            at earum asperiores.</p>
+        </div>
+        <div id="card3" style="display: none;">
+          <img src="https://fakeimg.pl/600x300/8f8">
+          <p>C Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore culpa inventore modi cumque impedit
+            reprehenderit beatae exercitationem facilis! Velit harum esse temporibus voluptatem quae, omnis ducimus
+            numquam
+            at earum asperiores.</p>
+        </div>
+        <div id="card4" style="display: none;">
+          <img src="https://fakeimg.pl/600x300/88f">
+          <p>D Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore culpa inventore modi cumque impedit
+            reprehenderit beatae exercitationem facilis! Velit harum esse temporibus voluptatem quae, omnis ducimus
+            numquam
+            at earum asperiores.</p>
+        </div>
+        <div id="card5" style="display: none;">
+          <img src="https://fakeimg.pl/600x300/f8f">
+          <p>E Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore culpa inventore modi cumque impedit
+            reprehenderit beatae exercitationem facilis! Velit harum esse temporibus voluptatem quae, omnis ducimus
+            numquam
+            at earum asperiores.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">Copyright © 2020 Mr. Victab All Rights Reserved</div>
+  </footer>
+</body>
+
+<script>
+  $(".list>a").on('click', function () {
+    $(".box>div").hide();
+    const whatShow = $(this).attr('href');
+    $(whatShow).show();
+  });
+</script>
+
+</html>

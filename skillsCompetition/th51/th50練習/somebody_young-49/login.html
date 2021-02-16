@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <img src="#" style="width:15px;height:15px">
+        <a href='home.html'>Home</a>
+        <a href='tourist.html#sen1'>Tourist Attractions</a>
+        <a href='culture.html'>Culture</a>
+        <a href='login.html'>login</a>
+    </nav>
+    <main>
+        <div class="login">
+            <form action="#">
+                <div><label for="acc">Account：</label><input type="text" name="acc" id="acc"></div>
+                <div><label for="pw">Password：</label><input type="password" name="pw" id="pw"></div>
+                <div><label for="cerf">Verification：</label><input type="text" name="verf" id="verf"></div>
+                <div><label><div class="verf"></div></label></div>
+                <div>
+                    <input type="button" value="submit" onclick="login()">
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <footer>
+        Copyright @ 2020 Mr. Victab All Rights Reserved
+    </footer>
+</body>
+</html>
+<script>
+    let number=Math.floor(Math.random()*10000);
+    document.querySelector(".verf").innerHTML=number;
+    function login(){
+        let acc=document.querySelector("#acc").value;
+        let pw=document.querySelector("#pw").value;
+        let verf=document.querySelector("#verf").value;
+        if(verf==number){
+            if(acc=='admin' && pw=='1234'){
+                alert("登入成功")
+            }
+        }
+    }
+</script>

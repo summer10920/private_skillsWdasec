@@ -1,0 +1,194 @@
+body {
+  background: linear-gradient(90deg, #4e0064, #878787);
+}
+* {
+  font-family: Arial, "微軟正黑體";
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #333;
+}
+
+section .h2::after {
+}
+
+.container {
+  width: 1140px;
+}
+
+/* header LOGO*/
+header {
+  background: white;
+}
+header div {
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.5rem;
+}
+header div {
+  margin: 20px 0;
+}
+
+/**navbar**/
+nav {
+  background: #333;
+}
+.navbar-inverse .navbar-inner {
+  background: #333;
+  border-color: unset;
+}
+
+.mynav ul.nav {
+  float: right;
+}
+nav > .navbar {
+  margin-bottom: 0;
+}
+
+.navbar .nav > li > a {
+  padding: 20px 40px;
+}
+
+.navbar-inverse .nav > li > a,
+section h2 {
+  position: relative;
+  z-index: 10;
+}
+
+.nav > li > a:after,
+section h2:after {
+  display: block;
+  content: "";
+  transform: skew(-25deg);
+  background: #7d3d8f;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 20px 30px;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: -10;
+}
+.nav > li:hover > a:after,
+section h2:after {
+  opacity: 1;
+}
+section h2 {
+  display: inline-block;
+  margin: 0 0 20px;
+}
+
+/**slider**/
+.carousel-control {
+  top: 50%;
+  background: none;
+  border: none;
+  font-size: 3rem;
+}
+.carousel-control.left {
+  left: calc(50vw - 650px);
+}
+.carousel-control.right {
+  right: calc(50vw - 650px);
+}
+
+.carousel {
+  box-shadow: 0px 6px 15px 0px #000;
+}
+
+/*msg and pk*/
+.mymsg,
+.mypk {
+  background: #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.mymsg:not(form),
+.mypk:not(form) {
+  color: #eee;
+}
+
+.mymsg .span2 {
+  text-align: center;
+}
+
+.mymsg .span10 > p {
+  min-height: 100px;
+}
+
+.mymsg .bottom {
+  text-align: right;
+  border-top: 1px #777 dashed;
+  padding-top: 5px;
+}
+
+.mymsg .thumbnail,
+.mypk .thumbnail {
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #eee;
+}
+
+.mymsg .control {
+  position: absolute;
+  right: 10px;
+  bottom: 3rem;
+}
+
+.mypk .thumbnail {
+  height: 120px;
+  background: linear-gradient(
+    65deg,
+    rgba(255, 58, 58, 1) 30%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(72, 69, 255, 1) 70%
+  );
+}
+
+.mypk .red,
+.mypk .blue {
+  height: 100%;
+  /* width:100%; */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+  padding: 15px;
+  position: relative;
+  box-shadow: inset 0 0 10px 0 #000;
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+}
+.mypk .red {
+  clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 0% 100%);
+}
+.mypk .blue {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 25% 100%);
+}
+.mypk h5 {
+  position: absolute;
+  bottom: 0;
+}
+.mypk .red > h5 {
+  left: 10px;
+}
+.mypk .blue > h5 {
+  right: 10px;
+}
+.mypk .span2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 120px;
+  text-align: center;
+  -webkit-text-fill-color: gold;
+  text-shadow: 0 0 10px #000;
+}
+
+.row-fluid [class*="span"]:nth-child(3n-2) {
+  margin-left: 0;
+}

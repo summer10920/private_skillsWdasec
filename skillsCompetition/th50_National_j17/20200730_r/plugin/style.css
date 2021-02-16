@@ -1,0 +1,107 @@
+/*環境調整*/
+* {
+  font-family: Arial, "微軟正黑體";
+  text-align: center;
+}
+section, div, p {
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(90deg, #4e0064, #888);
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.container {
+  width: 940px !important;
+}
+
+/* 網站標題 */
+header {
+  background: #eee;
+  line-height: 100px;
+  height: 100px;
+}
+
+/* 選單區 */
+nav ul {
+  float: right !important;
+}
+nav {
+  position: sticky;
+  top: 0;
+  margin-bottom: 0 !important;
+  z-index: 99;
+}
+
+/* 廣告主題 */
+.ad {
+  background: url("../img/bg.jpg") center no-repeat;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ad p {
+  padding: 20px;
+  background: #ccc8;
+  color: #eee;
+}
+
+/* 留言板 */
+section:not(.ad) {
+  background: #333;
+  padding: 20px;
+  margin-top: 80px;
+  min-height: calc(100vh - 160px);
+}
+h2 {
+  color: #eee;
+}
+.row-fluid {
+  background: #eee;
+  padding: 10px;
+  margin-top: 10px;
+}
+p {
+  min-height: 100px;
+  text-align: left;
+}
+.bottom {
+  text-align: right;
+  border-top: 1px dotted #333;
+  padding: 10px 0;
+}
+.del {
+  padding: 10px 0;
+  color: red;
+  opacity: 0.5;
+}
+.del div {
+  min-height: unset !important;
+}
+
+/* 賽事版 */
+table * {
+  color: #eee;
+  text-align: center !important;
+}
+td {
+  vertical-align: middle !important;
+}
+tbody tr:nth-child(odd) > td {
+  background: #f006 !important;
+}
+tbody tr:nth-child(even) > td {
+  background: #00f6 !important;
+}
+tbody img {
+  border-radius: 10%;
+  height: 50px;
+  width: 50px;
+}
+
+/* modal */
+footer {
+  margin-top: 80px;
+}
