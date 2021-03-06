@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    for(初始指令;判斷執行(每次);每次離開指令){
+    }
+    */
+
+    // const i=10;
+    // for(let i=0;i<10;i++){
+    //   console.log(i);
+    // }
+    // console.log(i);
+
+
+    // 1 4 7 10
+    // for(let i=1;i<11;i+=3){
+    //   console.log(i);
+    // }
+
+    for (let i = 2; i < 10; i++) {
+      for (let j = 1; j < 10; j++) console.log(`${i}*${j}=${i * j}`);
+      console.log("---------------");
+    }
+
+    /* 99乘法表
+    console.log('2*1=2');
+    console.log('2*2=4');
+    console.log('2*3=6');
+    console.log('2*4=8');
+    console.log('2*5=10');
+    console.log('2*6=12');
+    console.log('2*7=14');
+    console.log('2*8=16');
+    console.log('2*9=18');
+    console.log("---------------");
+    console.log('3*1=2');
+    console.log('3*2=4');
+    console.log('3*3=6');
+    console.log('3*4=8');
+    console.log('3*5=10');
+    console.log('3*6=12');
+    console.log('3*7=14');
+    console.log('3*8=16');
+    console.log('3*9=18');
+    console.log("---------------");
+    */
+
+    /*
+    while(判斷執行每次){
+    }
+    */
+    // let n = 0;
+    // while (n < 5) {
+    //   console.log(n);
+    //   n++;
+    // }
+    // for (let i = 0; i < 5; i++) console.log(i);
+
+    for (let i = 0; i < 10; i++) {
+      if(i==5) continue; // 跳過當下的迴圈
+      if(i==7) break; //破壞整體迴圈
+      console.log(i);
+    }
+
+    function say(){
+      console.log("H");
+      console.log("E");
+      return "END";
+      console.log("L");
+      console.log("L");
+      console.log("O");
+    }
+
+
+  </script>
+</body>
+
+</html>

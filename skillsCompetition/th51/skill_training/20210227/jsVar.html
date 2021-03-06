@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    a = 50; //臨時變數，很隨意的拿來用，沒有所謂的區間觀念，相對來說不嚴謹(很少用不安全)
+    var aa = 100; //宣告變數 (早期)
+    const bb = 200;  //第6代JS(ES6) 提供的變數觀念， 一旦被指定內容就不允許被修改
+    let cc = 300; //ES6   (區間內不允許重複)
+
+
+    function echo() {
+
+      // var aa = 200;
+      // let cc= 400;
+      console.log(a, aa, bb, cc);
+    }
+    echo();
+
+    console.log(a);
+    console.log(aa);
+    console.log(bb);
+    console.log(cc);
+    console.log("END");
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+      隨機整數 介於 0~14
+      0~1 (不含1) *15倍 => 0~15 (不含15)
+      0~14.多 去除小數點 => 0 ~ 14 整數
+    */
+    let number = Math.random(); // 0~1(不含1) 之浮點數
+    console.log(Math.floor(number * 15));
+
+
+    /*
+    隨機整數 介於 40~88  = (0 ~ 48) + 40
+    0~1 放大 49 倍 =>  0~ 48.多  => 去小數點 => + 40 => 40~88
+    */
+    // 49 = 88 - 40 +1
+    for (let i = 0; i < 100; i++) console.log(Math.floor(Math.random() * 49) + 40);
+
+
+    let rand = function (min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    
+
+
+  </script>
+</body>
+
+</html>

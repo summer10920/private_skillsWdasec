@@ -1,0 +1,160 @@
+/* for all page */
+* {
+  font-family: Arial, "微軟正黑體", sans-serif;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header {
+  background: darkgoldenrod;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex; /*彈性盒*/
+}
+nav.container {
+  justify-content: space-between; /* 主軸分配方式 */
+  align-items: center; /*交軸分配方式*/
+}
+header h1 {
+  margin-right: auto;
+}
+header a {
+  margin: 0 20px;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+header a:hover,
+header a.active {
+  background: white;
+  color: darkgoldenrod;
+  border-radius: 10px;
+}
+footer {
+  background: darkgoldenrod;
+  color: white;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2rem; /*rem是一個預設的字高度*/
+  padding: 0.5rem 0;
+}
+footer div.container {
+  justify-content: center;
+}
+main {
+  background: #eee;
+  min-height: 100vh; /*viewpoint height*/
+}
+img {
+  width: 100%;
+}
+/******************************for home.html used*/
+#home > main > .container {
+  justify-content: space-between; /* 主軸分配方式 */
+  align-items: center; /*交軸分配方式*/
+  height: 100vh;
+}
+#home .card {
+  flex-basis: 30%;
+}
+#home .card img {
+  border-radius: 10px;
+}
+/******************************for tourist.html used*/
+#tourist > main > .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+#tourist .list {
+  flex-basis: 35%;
+  display: flex;
+  flex-direction: column;
+}
+#tourist .list a {
+  background: darkgoldenrod;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-decoration: none;
+}
+#tourist .list a:hover {
+  color: silver;
+}
+#tourist .box {
+  flex-basis: 60%;
+}
+/***********************login.html used*/
+#login > main > .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+#login > main img {
+  flex-basis: 30%;
+  width: 30%;
+}
+#login > main form {
+  flex-basis: 65%;
+}
+/*******************************culture.html**/
+#culture > main > .container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* position: relative; */
+}
+#culture .box {
+  display: flex;
+  justify-content: space-between;
+}
+#culture .box div {
+  flex-basis: 18%;
+  cursor: pointer;
+}
+#culture .box img {
+  border-radius: 10px;
+}
+#culture .icon {
+  display: flex;
+  position: absolute;
+  bottom: 60px;
+}
+
+#culture .lightbox{
+  background: #0008;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#culture .lightbox img{
+  max-width: 75vw;
+  max-height: 75vh;
+  width: auto;
+}
+#culture .lightbox p{
+  color:white;
+  width: 50vw;
+}
+#culture .box p{
+  display: none;
+}

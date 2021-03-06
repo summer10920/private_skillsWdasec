@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const a = "A";  // 值 value
+    const b = "B";
+    //array 陣列 = 可以無限多個值共用一個變數名稱
+    const ary1 = ["A", "B", [1, 2, 3], "D"];
+    // console.log(ary[2]);
+
+    let ary2 = ["A2", "B2"];  //  暴力的 將一個[]的描述 指定給 變數
+    ary2.push("C2");  //使用array的原生鍊之push函式加掛C2放入陣列之尾
+
+    let ary3 = new Array();
+    ary3.push("A3", "B3", "C3");
+
+    for (let i = 1; i < 10; i++) ary3.push(i);
+
+    for (let i = 0; i < ary3.length; i++) console.log(ary3[i]); //i=index
+
+
+    // ary3.forEach(element => {
+
+    // });
+    // ary3.forEach(function (e) {  //run 12 次
+    //   console.log(e);
+    // });
+    // ary3.forEach((e) => {
+    //   console.log(e);
+    // });
+    ary3.forEach(e=>console.log(e));
+
+    console.log("------");
+
+    /*
+    for PHP
+    $animal["cat"]="kitty";
+    $animal["dog"]="wow";
+    */
+
+    let obj={cat:"kitty","dog":"wow"}
+    
+
+  </script>
+</body>
+
+</html>

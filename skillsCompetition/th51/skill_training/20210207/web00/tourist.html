@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tourist Attractions | Mr. Victab</title>
+  <script src="jquery.min.js"></script>
+</head>
+
+<body id="tourist">
+  <header>
+    <nav class="container">
+      <h1>LOGO</h1>
+      <a href="home.html">Home</a>
+      <a href="tourist.html" class="active">Tourist Attractions</a>
+      <a href="culture.html">Culture</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="list">
+        <a href="#card1">Sheikh Zayed Grand Mosque</a>
+        <a href="#card2">The Yas Marina Circuit</a>
+        <a href="#card3">Zayed National Museum</a>
+        <a href="#card4">The Louvre Abu Dhabi</a>
+        <a href="#card5">Ferrari World Abu Dhabi</a>
+      </div>
+      <div class="box">
+        <div id="card1">
+          <img src="img/012.JPG">
+          <p>Sheikh Zayed Grand Mosque (Arabic: جامع الشيخ زايد الكبير‎‎) is located in Abu Dhabi, the capital city of
+            the United Arab Emirates, and is considered to be the key site for worship in the country. </p>
+        </div>
+        <div id="card2" style="display: none;">
+          <img src="img/04-1.jpg">
+          <p>The Yas Marina Circuit (Arabic: حلبة مرسى ياس) is the venue for the Abu Dhabi Grand Prix. The circuit was
+            designed by Hermann Tilke, and is situated on Yas Island, about 30 minutes from the capital of the UAE, Abu
+            Dhabi. </p>
+        </div>
+        <div id="card3" style="display: none;">
+          <img src="img/10.jpg">
+          <p>Zayed National Museum (Arabic: متحف زايد الوطني) is a planned museum, to be located in Abu Dhabi, UAE. It
+            will be built on Saadiyat Island. The museum will be the centrepiece of the Saadiyat Island Cultural
+            District and will showcase the history, culture and more recently the social and economic transformation of
+            the Emirates. </p>
+        </div>
+        <div id="card4" style="display: none;">
+          <img src="img/09.jpg">
+          <p>The Louvre Abu Dhabi is a planned museum , to be located in Abu Dhabi , UAE. Artwork from around the world
+            will be showcased at the museum, with particular focus placed upon bridging the gap between Eastern and
+            Western art. </p>
+        </div>
+        <div id="card5" style="display: none;">
+          <img src="img/08.jpg">
+          <p>Ferrari World Abu Dhabi is an amusement park located on Yas Island in Abu Dhabi, United Arab Emirates. It
+            is the first Ferrari-branded theme park and has the record for the largest space frame structure ever built.
+            Formula Rossa, the world's fastest roller coaster, is also located here. </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <footer>
+    <div class="container">Copyright © 2020 Mr. Victab All Rights Reserved</div>
+  </footer>
+</body>
+<script>
+  $(".list>a").on("click",function(){ //只要.list>a被點擊時會觸發function(){}動作
+    $(".box>div").hide(); //全部DIV隱藏
+    const who=$(this).attr("href"); //透過點選某個a連結(等於this)還獲得href之文字為何?
+    $(who).show(); //將指定的div(夾帶ID，例如#card2) 顯示
+  });
+</script>
+
+</html>

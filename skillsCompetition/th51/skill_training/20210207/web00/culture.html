@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Culture | Mr. Victab</title>
+  <script src="jquery.min.js"></script>
+</head>
+
+<body id="culture">
+  <header>
+    <nav class="container">
+      <h1>LOGO</h1>
+      <a href="home.html">Home</a>
+      <a href="tourist.html">Tourist Attractions</a>
+      <a href="culture.html" class="active">Culture</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="box">
+        <div>
+          <img src="img/04-1.jpg">
+          <p>Although many women wear the traditional hijab or abaya, expats aren't expected to follow this custom. But it's still important to dress modestly and cover your shoulders and legs when you're out in public. </p>
+        </div>
+        <div>
+          <img src="img/08.jpg">
+          <p>Islam is the official religion of the UAE and plays a big part in how Emiratis live their everyday life. The government follows a policy of tolerance toward foreigners and allows them to practice their own religion. By the same token, non-Muslims are expected to respect the religious customs of the country. </p>
+        </div>
+        <div>
+          <img src="img/09.jpg">
+          <p>Arabian hospitality is the stuff of legends. In Abu Dhabi, it’s a lifestyle. Here, the warmth of welcome and generosity that emerged from encountering travellers in the desert generations ago, is very much a part of life today – from the traditional serving of Arabic coffee to an absolute dedication to the highest standards of modern service. </p>
+        </div>
+        <div>
+          <img src="img/10.jpg">
+          <p>Ramadan is the holiest time of the year in the Islamic calendar - and you should avoid eating, drinking and smoking in public or in front of Muslim friends and colleagues during fasting hours. At sunset, expats are encouraged to join in the breaking of the fast. Many companies operate on reduced hours and provide special rooms where non-Muslim employees can eat during the holy month.</p>
+        </div>
+        <div>
+          <img src="img/012.jpg">
+          <p>This is a spectacular sport and a trip to the races can be one of the most memorable highlights of a visit to Abu Dhabi. Cheer on the camels as they gallop around a specially made track, and marvel at how these seemingly ungainly creatures can reach such high speeds. Races normally take place on weekend mornings, with additional races on public holidays. </p>
+        </div>
+      </div>
+      <div class="icon">
+        <img src="img/facebook.png">
+        <img src="img/twitter.png">
+        <img src="img/you-tube.png">
+        <img src="img/google.png">
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">Copyright © 2020 Mr. Victab All Rights Reserved</div>
+  </footer>
+  <section class="lightbox" style="display: none;"> <!--隱藏的燈箱，平常看不到-->
+      <img src="img/004.jpg">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet amet temporibus praesentium, optio impedit illo officiis libero nihil ducimus quae fugiat tenetur sed aspernatur laudantium ratione alias sunt explicabo? Commodi!</p>
+  </section>
+</body>
+<script>
+  //開啟燈箱
+//  $(".box>div").on("click",function(){  //this == 某個 '.box>div'
+  $(".box>div").click(function(){
+    const img=$(this).find("img").attr("src"); //透過this自己(觸發的DIV)，去尋找自己的子孫img，透過attr方式獲得SRC這個屬性之內容並回傳給變數img
+    const txt=$(this).find("p").text(); //透過this自己(觸發的DIV)，去尋找子孫p，透過text()函式獲得內容字並回傳給變數txt
+    // console.log(img);
+    // console.log(txt);
+    $(".lightbox>img").attr("src",img); //偷換新圖片
+    $(".lightbox>p").text(txt); //偷換新文字
+    $(".lightbox").show(); //將燈箱顯示出來
+  });
+
+  //關閉燈箱
+  /*`
+  $(".lightbox").on("click",function(){  //this == '.lightnox'
+    $(this).hide();
+  });
+  */
+  $(".lightbox").click(function(){
+    $(this).hide();
+  });
+</script>
+
+</html>

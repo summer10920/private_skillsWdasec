@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      background: #ccc;
+      height: 800px;
+    }
+    .item{
+      width:200px; /*w200*/
+      height: 200px;
+      margin: 0; /*m0*/
+      color:white;
+      font-size: 3rem;
+      /* flex-basis: 30%; */
+    }
+    .red{
+      background: red;
+      /* align-self: flex-start; */
+      order:5;
+    }
+    .green{
+      background: green;
+    }
+    .blue{
+      background: blue;
+      order:-1;
+      /* align-self: flex-end; */
+    }
+    .flex{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      /* flex-direction: column; */
+      flex-wrap: wrap-reverse; /*可換行，可決定往哪折*/
+      align-content: center; /*多行情況下，決定空間分配方式*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex">
+    <p class="item red">1</p>
+    <p class="item green">2</p>
+    <p class="item blue">3</p>
+    <!-- <p class="item red">4</p>
+    <p class="item green">5</p>
+    <p class="item blue">6</p>
+    <p class="item red">7</p>
+    <p class="item green">8</p>
+    <p class="item blue">9</p> -->
+  </div>
+</body>
+
+</html>
