@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devices | Asian Gaming World</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body id="devices">
+  <header>
+    <nav class="container">
+      <img src="media/logo.png" class="logo">
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="devices.html" class="active">Devices</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <img src="https://fakeimg.pl/600x300">
+      <!-- <h3>Lorem ipsum dolor sit amet.</h3> -->
+      <p>A Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, quo.</p>
+    </div>
+    <div class="card">
+      <img src="https://fakeimg.pl/300x500">
+      <!-- <h3>Lorem ipsum dolor sit amet.</h3> -->
+      <p>B Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, quo.</p>
+    </div>
+    <div class="card">
+      <img src="https://fakeimg.pl/400x300">
+      <!-- <h3>Lorem ipsum dolor sit amet.</h3> -->
+      <p>C Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, quo.</p>
+    </div>
+    <div class="card">
+      <img src="https://fakeimg.pl/400x300">
+      <!-- <h3>Lorem ipsum dolor sit amet.</h3> -->
+      <p>D Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet doloribus, incidunt ipsam dicta ipsum quo doloremque optio voluptas a explicabo! Molestiae necessitatibus explicabo atque illum facere odit ipsa in praesentium?</p>
+    </div>
+    <div class="card">
+      <img src="https://fakeimg.pl/400x300">
+      <!-- <h3>Lorem ipsum dolor sit amet.</h3> -->
+      <p>E Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, quo.</p>
+    </div>
+    <div class="icon">
+      <a href="#"><img src="media/twitter2.png"></a>
+      <a href="#"><img src="media/facebook1.png"></a>
+      <a href="#"><img src="media/googleplusalt3.png"></a>
+      <a href="#"><img src="media/youtube1.png"></a>
+    </div>
+    <div class="lightbox" style="display: none;">
+      <div class="zone">
+        <p>AAAAAAAAAA</p>
+      </div>
+    
+  </main>
+
+  <footer>
+    <div class="container">Copyright © 2021 Asian Gaming World All Rights Reserved</div>
+  </footer>
+
+  <script>
+    $(".card img").click(function () {  // 對圖片點擊時做甚麼
+        const imgNode=$(this).clone(); //將 這個對象複製起來
+        const txtNode=$(this).next().clone(); // 將 這個對象的下一位複製起來
+        $(".zone").empty().append(imgNode,txtNode); // 找到 .zone 先清空內元素，接著插入上面兩個元素
+        $(".lightbox").fadeIn(); //將 .lightbox 淡入呈現
+    });
+
+    $(".lightbox").click(function(){ // 對 lightbox 點擊時做甚麼
+      $(this).fadeOut(); //將 這個對象淡出消失
+    });
+  </script>
+</body>
+
+</html>

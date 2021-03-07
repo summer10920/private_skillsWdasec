@@ -1,7 +1,7 @@
-/************************************************ for all page */
+/*******************************************for all page */
 * {
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
   margin: 0 auto;
   max-width: 1140px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 header {
@@ -20,8 +21,8 @@ header {
 }
 
 header nav {
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 header .logo {
@@ -31,16 +32,16 @@ header .logo {
 }
 
 header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
   margin: 0 20px;
   padding: 10px 30px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
 }
 
 header a:hover,
 header a.active {
-  background: white;
+  background: #fff;
   color: #333;
   border-radius: 5px;
 }
@@ -48,16 +49,20 @@ header a.active {
 footer {
   background: #333;
   color: white;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 footer .container {
-  height: 2rem;
   justify-content: center;
   align-items: center;
+  height: 2rem;
+}
+
+main {
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 100px;
+  min-height: calc(100vh - 100px - 2rem);
+  /* 全高 - header - footer*/
 }
 
 img:not(.logo) {
@@ -65,24 +70,13 @@ img:not(.logo) {
   display: block;
 }
 
-main {
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-top: 100px;
-  min-height: calc(100vh - 100px);
-  padding-bottom: 2rem;
-}
-
-/*****************************home(index.html)*/
+/*******************************home(index)*/
 #home .card {
   width: 30%;
 }
 
-#home .card img {
-  border-radius: 10px;
-}
 
-/*****************************Games */
+/**********************games*/
 #games main>div {
   width: 49%;
 }
@@ -100,27 +94,27 @@ main {
 
 #games .map a:nth-of-type(1) {
   left: 10%;
-  top: 20%;
+  top: 10%;
 }
 
 #games .map a:nth-of-type(2) {
   left: 20%;
-  top: 30%;
+  top: 20%;
 }
 
 #games .map a:nth-of-type(3) {
   left: 30%;
-  top: 40%;
+  top: 30%;
 }
 
 #games .map a:nth-of-type(4) {
   left: 40%;
-  top: 50%;
+  top: 40%;
 }
 
 #games .map a:nth-of-type(5) {
   left: 50%;
-  top: 60%;
+  top: 50%;
 }
 
 #games .map a::before {
@@ -128,7 +122,7 @@ main {
   font-size: 2rem;
   line-height: 1rem;
   vertical-align: middle;
-  /* or text-bottom */
+  padding-right: 5px;
 }
 
 #games .box div {
@@ -137,7 +131,7 @@ main {
 
 #games .box p {
   position: absolute;
-  background: #333c;
+  background: #3338;
   color: white;
   bottom: 10px;
   left: 0;
@@ -146,19 +140,18 @@ main {
   padding: 20px;
 }
 
-/********************devices*/
-#devices main {
-  position: relative;
-}
-
+/*****************************devices*/
 #devices .icon {
   width: 100%;
+  height: 100px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #devices .icon img {
   width: 50px;
+  height: 50px;
   padding: 5px;
 }
 
@@ -166,55 +159,69 @@ main {
   display: none;
 }
 
-#devices main {
-  flex-wrap: wrap;
-}
-
 #devices .card {
   width: 30%;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 #devices img {
-  cursor: pointer;
   border-radius: 5px;
 }
 
 #devices .lightbox {
   position: fixed;
-  background: #333c;
+  background: #3338;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 999;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
 }
 
-#devices .lightbox img {
-  max-width: 70vw;
-  max-height: 70vh;
+#devices .zone {
+  position: relative;
+  height: 100%;
+
+  width: 70vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#devices .zone p {
+  position: absolute;
+  bottom: 20px;
+  left: 20vw;
+  right: 20vw;
+  background: #fff8;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#devices .zone img {
   height: 100%;
   width: auto;
 }
 
-/*************************login*/
+/**************************login*/
 #login form {
   margin: 0 auto;
-  box-shadow: 0 0 3px #333c;
-  border-radius: 3px;
+  box-shadow: 0 0 4px black;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-content: space-between;
   padding: 20px;
   font-weight: bold;
-  width: 50vw;
-  height: 35vh;
+  /* width: 50vw; */
+  /* height: 35vh; */
+  width: 800px;
+  height: 400px;
 }
 
 #login label {
@@ -223,18 +230,16 @@ main {
 
 #login input {
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
 }
 
 #login input[type=submit] {
-  width: 45%;
-  margin: 0 auto;
   cursor: pointer;
 }
 
 #login form div {
   background: yellow;
-  height: 2rem;
+  height: 2.5rem;
   text-align: center;
-  line-height: 2rem;
+  line-height: 2.5rem;
 }

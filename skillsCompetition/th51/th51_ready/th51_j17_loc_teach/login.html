@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Asian Gaming World</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body id="login">
+  <header>
+    <nav class="container">
+      <img src="media/logo.png" class="logo">
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="devices.html">Devices</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <form action="api.php">
+      <img src="https://fakeimg.pl/800x100">
+      <label>Account
+        <input type="text" name="acc">
+      </label>
+      <label>Password
+        <input type="password" name="pwd">
+      </label>
+      <label>Captcha Code
+        <div>9527</div>
+        <input type="hidden" name="code" value="">
+      </label>
+      <label>Enter Captcha
+        <input type="text" name="chk">
+      </label>
+      <input type="submit" value="Login">
+
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">Copyright © 2021 Asian Gaming World All Rights Reserved</div>
+  </footer>
+  <script>
+    const cod=Math.floor(Math.random()*9000)+1000;
+    $("form div").text(cod);
+    $("input[type=hidden").val(cod);
+  </script>
+</body>
+</html>
