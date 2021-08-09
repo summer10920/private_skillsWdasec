@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>後臺管理 | 國內旅遊網站</title>
+  <link rel="stylesheet" href="plugin/fontawesome/fontawesome.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="plugin/jquery/jquery.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="menu container fc">
+      <a href="/">登出</a>
+      <a href="#msg">留言管理</a>
+      <a href="#team">配對管理</a>
+    </div>
+  </nav>
+  <section id="ad" class="fc">
+    <img src="/media/random=1.jpg">
+    <div class="fc">
+      <h1 class="fc">Travel In Taiwan</h1>
+      <p>享樂旅行，臺灣！背上你的行李，準備搭夥出發吧～</p>
+    </div>
+  </section>
+  <section id="msg" class="fc">
+    <img src="media/random=2.jpg">
+    <main class="container fc">
+      <h1 class="fc">旅客留言板</h1>
+      <div class="scrollbox">
+        <div class="col">
+          <!-- ajax msgallAdm -->
+        </div>
+      </div>
+    </main>
+    <div class="slide fc msg">
+      <form method="post" enctype="multipart/form-data" class="msgadd">
+        <input type="hidden" name="id" value="0">
+        <label>遊客姓名<input required type="text" name="user"></label>
+        <label>留言序號<input required type="number" name="pwd"></label>
+        <label>聯絡電話
+          <input required type="tel" name="tel" pattern="^\d[\d\-]+" data-txt="連絡電話只能包含數字及「-」">
+        </label>
+        <label>Email
+          <input required type="email" name="mail" pattern="^\w+@\w+\.\w+(\.\w+)*" data-txt="需包含「@」及至少 1 個「.」">
+        </label>
+        <label>上傳圖片<input type="file" name="img">
+          <smail>click here to upload</smail>
+        </label>
+        <label>留言內容<textarea required type="text" name="info"></textarea></label>
+        <div class="fc" style="justify-content: space-around;width: 100%;">
+          <label class="noline">
+            <input type="hidden" name="showtel" value="0">
+            顯示電話<input type="checkbox" name="showtel" value="1">
+          </label>
+          <label class="noline">
+            <input type="hidden" name="showmail" value="0">
+            顯示信箱<input type="checkbox" name="showmail" value="1">
+          </label>
+        </div>
+        <label>回覆內容<textarea type="text" name="reply"></textarea></label>
+        <input type="submit" value="送出">
+        <button type="button" class="close" onclick="msgSlide(0)">X</button>
+      </form>
+    </div>
+  </section>
+  <section id="team" class="fc">
+    <img src="media/random=3.jpg">
+    <main class="container fc">
+      <h1 class="fc">最新消息與遊客配對公告區塊</h1>
+      <div class="scrollbox">
+        <!-- ajax teamallAdm -->
+      </div>
+    </main>
+  </section>
+  <script src="js.js"></script>
+  <script>
+    msgallAdm();
+    teamallAdm();
+  </script>
+</body>
+
+</html>

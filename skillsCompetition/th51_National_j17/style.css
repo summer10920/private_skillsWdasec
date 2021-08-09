@@ -1,0 +1,632 @@
+@charset "UTF-8";
+
+/******************************** for all*/
+:root {
+  --green: rgb(20 191 136);
+  --greenop: rgb(20 191 136 / 0.2);
+  --blue: rgb(65 141 213);
+  --blueop: rgb(65 141 213 / 0.2);
+  --yellow: rgb(255 175 30);
+  --yellowop: rgb(255 175 30 / 0.2);
+  --red: rgb(255 69 164);
+  --redop: rgb(255 69 164 / 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: arial, "微軟正黑體";
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h5 {
+  margin: 0.5rem 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-top: 0;
+  width: 100%;
+}
+
+small {
+  color: #777;
+  font-size: 0.5rem;
+  margin-bottom: 10px;
+}
+
+button {
+  border: 0;
+  display: block;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.fc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dn {
+  display: none;
+}
+
+.fa {
+  color: #777;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 50%;
+}
+
+label,
+label * {
+  color: #fff !important;
+}
+
+label:not(.noline) {
+  width: 100%;
+  border-bottom: 1px solid #CCC;
+}
+
+
+input,
+textarea {
+  background-color: transparent !important;
+  border: none;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #fff;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:not([type=checkbox]),
+textarea {
+  width: 100%;
+}
+
+textarea {
+  height: 5rem;
+  overflow: hidden;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #fff9;
+}
+
+input[type='file'] {
+  opacity: 0;
+}
+
+input[type='file']~smail {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  height: 25px;
+}
+
+input[type='submit'] {
+  border: 1px solid;
+  transition: 1s;
+  margin-top: 20px;
+}
+
+section {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+section#ad {
+  background: var(--greenop);
+  color: white;
+}
+
+section#msg {
+  background: var(--blueop);
+}
+
+section#team {
+  background: var(--yellowop);
+}
+
+section#login {
+  background: var(--redop);
+}
+
+section:last-of-type {
+  height: calc(100vh - 80px);
+}
+
+section>img {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+}
+
+/******************************** menu */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #3ad3;
+  backdrop-filter: blur(20px);
+  height: 80px;
+  padding: 30px;
+  text-decoration: none;
+  z-index: 99;
+}
+
+.menu {
+  /* height: 20px; */
+  justify-content: flex-end;
+}
+
+.menu>a:first-child {
+  margin-right: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu>a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+/******************************** ad*/
+#ad>div {
+  background: #14bf88;
+  position: absolute;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+  padding: 0 5%;
+  width: 40%;
+  height: 100%;
+  flex-direction: column;
+}
+
+#ad>img {
+  animation: ad 10s infinite alternate;
+  transform: scale(2) translate(20px, -20px);
+}
+
+@keyframes ad {
+  to {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+
+/******************************** moudle*/
+main {
+  flex-direction: column;
+  height: 80vh;
+  background: #eeee;
+  border-radius: 5px;
+  padding: 40px;
+  transform: translateY(-40px);
+}
+
+main>h1 {
+  flex-basis: 5%;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+main>h1::before,
+main>h1:after {
+  content: "";
+  width: 5rem;
+  height: 2px;
+  background: #777;
+  display: inline-block;
+  margin: 0 2rem;
+}
+
+main>.scrollbox {
+  width: 100%;
+  flex: 0 0 90%;
+  overflow-y: auto;
+  padding-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+main>.scrollbox::-webkit-scrollbar {
+  width: 10px;
+}
+
+#msg .scrollbox::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--blueop);
+}
+
+#team .scrollbox::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--yellowop);
+}
+
+.col {
+  flex: 0 0 calc(100% / 3);
+  min-width: calc(100% / 3);
+  margin-bottom: 20px;
+}
+
+.col:last-child {
+  flex: 1 0 100%;
+}
+
+.item {
+  /* flex: 0 0 100%; */
+  display: flex;
+  margin: 15px;
+  padding: 15px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 5px #3333;
+}
+
+.item div.top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--blue);
+  color: white;
+  width: 40px;
+  height: 40px;
+}
+
+.data {
+  flex: 0 0 100%;
+  max-width: 150px;
+  flex-wrap: wrap;
+}
+
+
+
+.data img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#msg input[type='submit']:hover {
+  background-color: #fff !important;
+  color: var(--blue);
+}
+
+#team input[type='submit']:hover {
+  background-color: #fff !important;
+  color: var(--yellow);
+}
+
+#login input[type='submit']:hover {
+  background-color: #fff !important;
+  color: var(--red);
+}
+
+.add {
+  background: #fff;
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  white-space: nowrap;
+  padding: 0;
+  padding-left: 50px;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 5vw;
+  bottom: 20vh;
+  box-shadow: 0 0 5px #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.add:hover {
+  width: 150px;
+}
+
+.add::before {
+  content: "+";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 46px;
+  height: 46px;
+  box-shadow: 0 0 0 2px #fff;
+  color: white;
+  border-radius: 25px;
+  font-size: 2rem;
+  line-height: 50px;
+  text-align: center;
+  animation: ro 2s 2s infinite;
+}
+
+@keyframes ro {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#msg .add {
+  color: var(--blue);
+}
+
+#team .add {
+  color: var(--yellow);
+}
+
+#msg .add::before {
+  background: var(--blue);
+}
+
+#team .add::before {
+  background: var(--yellow);
+}
+
+.slide {
+  width: 0;
+  height: 100vh;
+  backdrop-filter: blur(20px);
+  transition: 1s;
+  padding: 0;
+  overflow: hidden;
+  margin-left: 20px;
+  position: relative;
+  z-index: 9;
+}
+
+.slide.active {
+  width: 500px;
+}
+
+form {
+  flex: 0 0 80%;
+  height: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 80px;
+}
+
+form button {
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  border: 1px solid;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  line-height: 2rem;
+  text-align: center;
+  padding: 5px;
+  /* margin-top: 50px; */
+  transition: 1s;
+}
+
+#msg .slide {
+  background: var(--blueop);
+}
+
+#team .slide {
+  background: var(--yellowop);
+}
+
+#msg .close:hover {
+  color: var(--blue);
+  background: white;
+}
+
+#team .close:hover {
+  color: var(--yellow);
+  background: white;
+}
+
+h5 {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+/******************************** msg only*/
+#msg .item {
+  justify-content: space-between;
+  padding-right: 40px;
+  margin-bottom: 40px;
+}
+
+#msg .line {
+  width: 1px;
+  background: #eee;
+}
+
+.fa-phone::after,
+.fa-envelope::after {
+  content: attr(data-txt);
+  width: 400px;
+  background: var(--blue);
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -100px;
+  z-index: 99;
+  transition: 1s;
+}
+
+.fa-phone:hover::after,
+.fa-envelope:hover::after {
+  bottom: 15px;
+}
+
+.fa-pen-square {
+  flex: 0 0 auto;
+}
+
+#msg .words {
+  width: 80%;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+#msg .remove {
+  color: tomato;
+  font-style: italic;
+}
+
+#msg .ctl {
+  height: 100%;
+  width: auto;
+  background: var(--blue);
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  transform: translateX(calc(100% - 32px));
+}
+
+#msg .ctl:hover {
+  transform: translateX(0%);
+}
+
+#msg .fn {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#msg .fn>* {
+  flex-grow: 1;
+}
+
+#msg .mdy {
+  width: 50px;
+  background: orange;
+}
+
+#msg .del {
+  width: 50px;
+  background: lightcoral;
+}
+
+.reply {
+  border-top: 1px solid #3333;
+  color: #777;
+  width: 100%;
+}
+
+.reply::before {
+  content: "管理者回應:";
+  color: tomato;
+  display: block;
+}
+
+/******************************** team only*/
+#team .item {
+  justify-content: center;
+}
+
+#team .col:last-child .item {
+  border: 3px solid var(--yellow);
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  min-height: 100px;
+}
+
+#team .col .item::after {
+  content: "已搭配";
+  color: var(--yellow);
+}
+
+#team .col:last-child .item::after {
+  content: "等待配對中";
+  color: var(--yellow);
+}
+
+#team .item::after {
+  font-size: 1.25rem;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+/******************************** login only*/
+#login main {
+  background: transparent;
+  justify-content: space-around;
+}
+
+#login h1 {
+  color: #fff;
+}
+
+#login h1::before,
+#login h1:after {
+  background: #fff;
+}
+
+#login form {
+  margin: 0;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國內旅遊網站</title>
+  <link rel="stylesheet" href="plugin/fontawesome/fontawesome.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="plugin/jquery/jquery.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="menu container fc">
+      <a href="#">國內旅遊網站</a>
+      <a href="#msg">遊客留言</a>
+      <a href="#team">旅遊搭當配對</a>
+      <a href="#login">網站管理</a>
+    </div>
+  </nav>
+  <section id="ad" class="fc">
+    <img src="/media/random=1.jpg">
+    <img src="/media/random=2.jpg" style="display: none;">
+    <img src="/media/random=3.jpg" style="display: none;">
+    <img src="/media/random=4.jpg" style="display: none;">
+    <div class="fc">
+      <h1 class="fc">Travel In Taiwan</h1>
+      <p>享樂旅行，臺灣！背上你的行李，準備搭夥出發吧～</p>
+    </div>
+  </section>
+  <section id="msg" class="fc">
+    <img src="/media/random=2.jpg">
+    <main class="container fc">
+      <h1 class="fc">旅客留言板</h1>
+      <div class="scrollbox">
+        <div class="col">
+          <!-- ajax msgall -->
+        </div>
+      </div>
+    </main>
+    <div class="slide fc msg">
+      <form method="post" enctype="multipart/form-data" class="msgadd">
+        <input type="hidden" name="id" value="0">
+        <label>遊客姓名<input required type="text" name="user"></label>
+        <label>留言序號<input required type="number" name="pwd"></label>
+        <label>聯絡電話
+          <input required type="tel" name="tel" pattern="^\d[\d\-]+" data-txt="連絡電話只能包含數字及「-」">
+        </label>
+        <label>Email
+          <input required type="email" name="mail" pattern="^\w+@\w+\.\w+(\.\w+)*" data-txt="需包含「@」及至少 1 個「.」">
+        </label>
+        <label>上傳圖片<input type="file" name="img">
+          <smail>click here to upload</smail>
+        </label>
+        <label>留言內容<textarea required type="text" name="info"></textarea></label>
+        <div class="fc" style="justify-content: space-around;width: 100%;">
+          <label class="noline">
+            <input type="hidden" name="showtel" value="0">
+            顯示電話<input type="checkbox" name="showtel" value="1">
+          </label>
+          <label class="noline">
+            <input type="hidden" name="showmail" value="0">
+            顯示信箱<input type="checkbox" name="showmail" value="1">
+          </label>
+        </div>
+        <input type="submit" value="送出">
+        <button type="button" class="close" onclick="msgSlide(0)">X</button>
+      </form>
+    </div>
+    <button class="add" onclick="msgadd()">新增留言</button>
+  </section>
+  <section id="team" class="fc">
+    <img src="/media/random=3.jpg">
+    <main class="container fc">
+      <h1 class="fc">最新消息與遊客配對公告區塊</h1>
+      <div class="scrollbox">
+        <!-- ajax teamall -->
+      </div>
+    </main>
+    <div class="slide fc team">
+      <form enctype="multipart/form-data" class="teamadd">
+        <label>遊客姓名<input required type="text" name="user"></label>
+        <label>聯絡電話
+          <input required type="tel" name="tel" pattern="^\d[\d\-]+" data-txt="連絡電話只能包含數字及「-」">
+        </label>
+        <label>Email
+          <input required type="email" name="mail" pattern="^\w+@\w+\.\w+(\.\w+)*" data-txt="需包含「@」及至少 1 個「.」">
+        </label>
+        <label>上傳頭像<input required type="file" name="img">
+          <smail>click here to upload</smail>
+        </label>
+        <input type="submit" value="送出">
+        <button type="button" class="close" onclick="teamSlide(0)">X</button>
+      </form>
+    </div>
+    <button class="add" onclick="teamadd()">參加配對</button>
+  </section>
+  <section id="login" class="fc">
+    <img src="/media/random=4.jpg">
+    <main class="container fc">
+      <h1 class="fc">網站管理</h1>
+      <form enctype="multipart/form-data" action="admin.html">
+        <label style="order:1">圖片驗證 <i class=" fas fa-undo" onclick="randnum()"></i>
+          <svg viewbox="0 0 150 50">
+            <style>
+              .st1 {
+                font-size: 1.5rem;
+              }
+
+              .st2 {
+                fill: none;
+                stroke: #000000;
+                stroke-miterlimit: 10;
+              }
+            </style>
+            <text transform="matrix(1 0.3 0.5 1 35 25)" class="st1">1234</text>
+            <line class="st2" x1="15" y1="8" x2="142" y2="34" />
+            <line class="st2" x1="30" y1="29" x2="134" y2="18" />
+            <line class="st2" x1="7" y1="19" x2="145" y2="49" />
+            <line class="st2" x1="4" y1="5" x2="156" y2="9" />
+          </svg>
+          <input required type="text" name="admchk" pattern="" data-txt="驗證錯誤">
+        </label>
+        <label>帳號<input required type="text" name="user" pattern="admin" data-txt="帳號錯誤"></label>
+        <label>密碼<input required type=" password" name="pwd" pattern="1234" data-txt="密碼錯誤"></label>
+        <input style="order:2" type="submit" value="送出">
+      </form>
+    </main>
+  </section>
+  <script src="js.js"></script>
+  <script>
+    msgall();
+    teamall();
+    randnum();
+    adslider();
+    setAlert();
+  </script>
+</body>
+
+</html>

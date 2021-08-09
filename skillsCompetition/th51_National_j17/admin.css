@@ -1,0 +1,28 @@
+body>* {
+  filter: hue-rotate(45deg);
+}
+
+section:first-of-type{
+  height: 80px;
+}
+
+section:last-of-type main {
+  transform: none;
+}
+
+#msg button.top {
+  width: 50px;
+  background: var(--green);
+}
+
+#team .ctl {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
