@@ -68,10 +68,14 @@ const
   },
   msgmdy = who => { //need know mdy button is who
     const item = $(who).parents(".item");
-    if (item.find("input[name=pwd]").val() != item.find("input[name=chk]").val()) {
+    const msgkey = item.find("input[name=chk]");
+    if (item.find("input[name=pwd]").val() != msgkey.val()) {
       // alert("序號錯誤！");
-      item.find("input[name=chk]")[0].setCustomValidity("序號錯誤！");
-      item.find("input[name=chk]")[0].reportValidity();
+      msgkey[0].setCustomValidity("序號錯誤！");
+      msgkey[0].reportValidity();
+      msgkey.keyup(function () {
+        this.setCustomValidity("");
+      });
     }
     else {
       msgSlide(1); //open msg form
