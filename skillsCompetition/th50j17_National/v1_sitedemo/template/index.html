@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電競網站</title>
+  <link rel="stylesheet" href="plugin/bootstrap.min.css">
+  <link rel="stylesheet" href="plugin/style.css">
+  <script src="plugin/jquery.min.js"></script>
+  <script src="plugin/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!--網站標題-->
+  <header class="row-fluid">
+    <div class="span4">第46屆全國競賽電競遊 官方網站</div>
+    <div class="span8"></div>
+  </header>
+
+  <!-- 選單區 -->
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <!-- <a class="brand" href="#">Title</a> -->
+        <ul class="nav">
+          <!-- <li class="active"><a href="#">Home</a></li> -->
+          <li><a href="#">回首頁</a></li>
+          <li><a href="#msg">玩家留言板</a></li>
+          <li><a href="#pklist">最新消息與賽制公告區塊</a></li>
+          <li><a href="#pkadd" data-toggle="modal">玩家參賽</a></li>
+          <li><a href="#login" data-toggle="modal">網站管理</a></li>
+          <!-- <li><a href="admin.html">網站管理</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 廣告主題 -->
+  <section class="ad">
+    <p>根據市調公司Newzoo發布的全球電競市場報告指出，今年全球電競產值將達9.1億美元（約新台幣300億元），年增38%，隨著電競產業逐漸成熟，預估2020年產值將達到14億美元。由於電子競技成長猛烈，國際奧林匹克委員會（
+      IOC ）公布第六屆奧林匹克會議細節，其中包括先前奧委會委員 Tony Estanguet
+      承諾帶進奧委會的電子競技相關討論。簡單來說，奧委會確切認識到，電競作為一種產業與運動，而電競又在年輕世代中特別受歡迎，且許多奧運相關權益關係者，或多或少都有參與電競產業。所以電競很有可能納入奧林匹克的競賽項目之中。</p>
+  </section>
+
+  <!-- 留言板 -->
+  <div id="msg"></div>
+  <section class="container">
+    <h2>玩家留言板</h2>
+    <a href="#msgadd" class="btn btn-info" data-toggle="modal" style="float:right">我要留言</a>
+    <div style="clear: both;"></div>
+
+    <!-- data each-->
+    <div class="thumbnail row-fluid">
+      <div class="caption span2">
+        <img src="img/user.jpg" class="img-circle" width="100" height="100">
+        <h4>User Name</h4>
+        <h5>#<span class="sn">1</span></h5>
+      </div>
+      <div class="caption span10">
+        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+          metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <div class="bottom">
+          <span class="badge badge-info">
+            <span>&phone;</span>
+            <span class="tel">0988-588-088</span>
+          </span>
+          <span class="badge badge-info">
+            <i class="icon-envelope icon-white"></i>
+            <span class="mail">summer@gmail.com</span>
+          </span>
+          <span class="badge badge-info">
+            <i class="icon-time icon-white"></i>
+            <span>2020-09-09 18:00:00</span>
+          </span>
+          <!-- for admin -->
+          <!-- <span class="control">
+            <a href="#msgmdy" class="btn btn-warning" data-toggle="modal">編輯</a>
+            <a href="api.php?do=talkdel&id=0" class="btn btn-danger">刪除</a>
+          </span> -->
+        </div>
+      </div>
+    </div>
+    <div class="thumbnail row-fluid del">
+      <div class="span2">#2</div>
+      <div class="span10">本篇已被刪除</div>
+    </div>
+  </section>
+  <!-- 賽事版 -->
+  <div id="pklist"></div>
+  <section class="container">
+    <h2>最新消息與賽制公告區塊</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th width="10%">賽事場次</th>
+          <th width="10%"></th>
+          <th width="30%">玩家</th>
+          <th width="10%">匹配</th>
+          <th width="30%">玩家</th>
+          <th width="10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><img src="https://fakeimg.pl/50x50"></td>
+          <td>User Name</td>
+          <td>VS</td>
+          <td>User Name</td>
+          <td><img src="https://fakeimg.pl/50x50"></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><img src="https://fakeimg.pl/50x50">User</td>
+          <td>User Name</td>
+          <td>VS</td>
+          <td>等待匹配中...</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <footer>
+    <!-- Modal -->
+    <form id="msgadd" class="modal hide fade form-horizontal" action="api.php?do=talkadd" method="post">
+      <div class="modal-header">
+        <h3>新增留言</h3>
+      </div>
+      <div class="modal-body">
+        <div class="control-group">
+          <label class="control-label">玩家姓名</label>
+          <input type="text" name="user" required>
+        </div>
+        <div class="control-group">
+          <label class="control-label">留言內容</label>
+          <textarea name="msg" required></textarea>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Email</label>
+          <input type="email" name="mail" required>
+        </div>
+        <div class="control-group">
+          <label class="control-label">連絡電話</label>
+          <input type="tel" name="tel" pattern="[0-9\-]{9,12}" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">取消</button>
+        <input class="btn btn-primary" type="submit" value="送出">
+      </div>
+    </form>
+    <!-- for pk -->
+    <form id="pkadd" class="modal hide fade form-horizontal" action="api.php?do=gameadd" method="post"
+      enctype="multipart/form-data">
+      <div class="modal-header">
+        <h3>玩家參賽</h3>
+      </div>
+      <div class="modal-body">
+        <div class="control-group">
+          <label class="control-label">玩家姓名</label>
+          <input type="text" name="user" required>
+        </div>
+        <div class="control-group">
+          <label class="control-label">玩家頭像</label>
+          <input type="file" name="img" required>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Email</label>
+          <input type="email" name="mail" required>
+        </div>
+        <div class="control-group">
+          <label class="control-label">連絡電話</label>
+          <input type="tel" name="tel" pattern="[0-9\-]{9,12}" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">取消</button>
+        <input class="btn btn-primary" type="submit" value="送出">
+      </div>
+    </form>
+    <!-- for login -->
+    <form id="login" class="modal hide fade form-horizontal" action="api.php?do=login" method="post">
+      <div class="modal-header">
+        <h3>後台登入</h3>
+      </div>
+      <div class="modal-body">
+        <div class="control-group">
+          <label class="control-label">帳號<br>(玩家名稱)</label>
+          <input type="text" name="user" required>
+        </div>
+        <div class="control-group">
+          <label class="control-label">密碼<br>(玩家請輸入Mail)</label>
+          <input type="password" name="pwd" required>
+        </div>
+        <div class="control-group">
+          <label class="control-label">驗證碼<br>
+            <img src="https://fakeimg.pl/200x50">
+          </label>
+          <input type="text" name="ans" required>
+          <input type="hidden" name="check" value="1234">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">取消</button>
+        <input class="btn btn-primary" type="submit" value="送出">
+      </div>
+    </form>
+  </footer>
+</body>
+
+</html>
