@@ -20,7 +20,7 @@ foreach ($rows as $row) {
       </div>
     </div>
     <div class="card-body">
-      <p><?= $row['says'] ?></p>
+      <p><?= nl2br($row['says']) ?></p>
       <?= $row['dpy'] ? '<footer class="blockquote-footer"><span class="text-danger">管理員</span>對此留言已修改</footer>' : '' ?>
     </div>
   </div>
