@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#gray").fadeToggle(function () {
       let ans = confirm("如果測試資料太亂你可以選擇回溯到初始狀態。\n你是否要進行網站還原??");
       if (ans) {
-        $.get("../recovery/redb.php", function (re) {
+        $.get("redb.php", function (re) {
           if (re == "success") {
             $("body").append(`<div id='loading'>正在努力還原網站資料...</div>`);
             $("#loading").fadeToggle();
