@@ -29,7 +29,7 @@ switch ($_GET['do']) {
 		break;
 	case 'login':
 		$_SESSION['mode'] = "admin";
-		header("location:./?do=admin");
+		header("location:./");
 		break;
 	case 'msgadd':
 		$sql = "INSERT INTO th16_msg (who,tel,mail,addr,says) VALUES('" . $_POST['who'] . "','" . $_POST['tel'] . "','" . $_POST['mail'] . "','" . $_POST['addr'] . "','" . $_POST['says'] . "')";

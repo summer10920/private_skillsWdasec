@@ -1,5 +1,5 @@
 <?php
-$db = new PDO("mysql:host=127.0.0.1;dbname=skillscompetition_th16d17_national;charset=utf8", "skcomp_th16d17", "skcomp_th16d17");
+$db = new PDO("mysql:host=127.0.0.1;dbname=skillsCompetition_th16d17_National;charset=utf8", "skcomp_th16d17", "skcomp_th16d17");
 
 $sql = "
       TRUNCATE TABLE th16_msg;

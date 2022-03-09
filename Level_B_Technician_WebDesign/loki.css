@@ -1,0 +1,57 @@
+:root {
+  --lokicolor: #e91061;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background: #333;
+}
+a {
+  flex: 1 1 10%;
+  transition: 1s;
+  display: flex;
+  position: relative;
+  height: 50vh;
+}
+a:hover {
+  flex-basis: 50%;
+}
+a::before {
+  content: "";
+  background: hsl(var(--clr) 50% 50% / 30%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: 1s;
+}
+a:hover::before {
+  backdrop-filter: blur(10px);
+}
+a::after {
+  content: attr(loki-data);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--lokicolor);
+  color: white;
+  border-radius: 50px;
+  padding: 20px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: 1s;
+}
+a:hover::after {
+  opacity: 1;
+}
+img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  transition: 1s;
+}

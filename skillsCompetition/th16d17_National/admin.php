@@ -1,3 +1,3 @@
 <?php
-  if($_SESSION['user']!="admin") header("location:./");
+  // if($_SESSION['user']!="admin") header("location:./");
 ?>
