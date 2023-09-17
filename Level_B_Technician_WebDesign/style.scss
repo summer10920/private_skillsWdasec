@@ -1,0 +1,132 @@
+// Variables
+$nav-link-colors: #facb14,
+#98b0cc,
+#999999,
+#744200;
+
+// Mixin for link colors
+@mixin hover-link-colors {
+  @for $i from 1 through 4 {
+    &:nth-of-type(#{$i}):hover>i {
+      color: nth($nav-link-colors, $i);
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  height: 100vh;
+  font-family: monospace;
+}
+
+nav {
+  background: #eee;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  border-radius: 5px;
+
+  &:hover>h1 {
+    opacity: 0;
+  }
+
+  &::before {
+    content: "";
+    position: fixed;
+    background: radial-gradient(circle, #0003, #000f);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  a {
+    font-size: 1.5rem;
+    padding: 20px 0;
+    width: 100px;
+    text-align: center;
+    @include hover-link-colors;
+  }
+}
+
+h1 {
+  position: absolute;
+  color: lightgrey;
+  bottom: -65%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+  transition: 1s;
+  transform: translateY(-3rem);
+  opacity: 0;
+  text-shadow: 1px 1px 3px black;
+
+  a:hover & {
+    transform: translateY(-7rem);
+    opacity: 1;
+  }
+}
+
+img {
+  position: fixed;
+  width: 700px;
+  z-index: -2;
+  top: 0;
+  right: -1920px;
+  left: -1920px;
+  bottom: 0;
+  margin: auto;
+  transform: translateY(-3rem);
+  transition: 1s;
+  opacity: 0;
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(250, 250, 250, 0.3)));
+
+  a:hover & {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+i {
+  color: #333;
+  transition: color 0.5s;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  color: white !important;
+
+  a {
+    text-decoration: none;
+    color: wheat;
+  }
+}
